@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Toko Buku Online</h1>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="index.html">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Form Pemesanan Buku</h2>
+        
+        <div class="checkout-container">
+            <div class="order-section">
+                <h3>Pilih Buku</h3>
+                <div class="book-selection">
+                    <select id="bookSelect" class="form-control">
+                        <option value="">Pilih Buku</option>
+                    </select>
+                    <input type="number" id="quantity" class="form-control" placeholder="Jumlah" min="1" value="1">
+                    <button id="addToOrder" class="btn-secondary">Tambah ke Pesanan</button>
+                </div>
+                
+                <div class="order-items">
+                    <h4>Pesanan Anda</h4>
+                    <table id="orderTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Buku</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
+                                <th>Subtotal</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderTableBody">
+                        </tbody>
+                    </table>
+                    <div class="order-total">
+                        <strong>Total: <span id="totalAmount">Rp 0</span></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer-section">
+                <h3>Informasi Pemesan</h3>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="customerName">Nama Lengkap:</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email:</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">No. Telepon:</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">Alamat Lengkap:</label>
+                        <textarea id="customerAddress" required></textarea>
+                    </div>
+                    
+                    <h3>Informasi Pembayaran</h3>
+                    <div class="form-group">
+                        <label for="paymentMethod">Metode Pembayaran:</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Pilih Metode</option>
+                            <option value="transfer">Transfer Bank</option>
+                            <option value="credit">Kartu Kredit</option>
+                            <option value="cod">COD</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Proses Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

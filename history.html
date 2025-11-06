@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Transaksi - Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Toko Buku Online</h1>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="index.html">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="history-header">
+            <h2>History Transaksi</h2>
+            <div class="history-controls">
+                <div class="filter-group">
+                    <label for="filterStatus">Filter Status:</label>
+                    <select id="filterStatus" class="form-control">
+                        <option value="all">Semua Status</option>
+                        <option value="completed">Selesai</option>
+                        <option value="pending">Pending</option>
+                        <option value="cancelled">Dibatalkan</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="searchTransaction" class="form-control" placeholder="Cari transaksi...">
+                    <button class="btn-secondary">🔍</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-info">
+                    <h3>Total Transaksi</h3>
+                    <span class="stat-number" id="totalTransactions">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3>Transaksi Selesai</h3>
+                    <span class="stat-number" id="completedTransactions">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3>Transaksi Pending</h3>
+                    <span class="stat-number" id="pendingTransactions">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <h3>Total Pendapatan</h3>
+                    <span class="stat-number" id="totalRevenue">Rp 0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="historyTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID Transaksi</th>
+                        <th>Tanggal</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Metode Bayar</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal Detail Transaksi -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content large-modal">
+                <span class="close">&times;</span>
+                <h2>Detail Transaksi</h2>
+                <div id="transactionDetail">
+                    <!-- Detail akan diisi oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

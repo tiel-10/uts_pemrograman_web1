@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h1>Login Toko Buku</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <div class="login-links">
+                <button id="forgotPassword" class="btn-link">Lupa Password</button>
+                <button id="register" class="btn-link">Daftar</button>
+            </div>
+        </div>
+    </div>
+<!-- Custom Alert untuk Login Error -->
+<div id="loginErrorAlert" class="custom-alert">
+    <div class="alert-content">
+        <div class="alert-icon">❌</div>
+        <div class="alert-message">
+            <h3r>Login Gagal</h3r>
+            <p>Email atau password yang Anda masukkan salah</p>
+        </div>
+        <button class="alert-close" onclick="closeLoginError()">×</button>
+    </div>
+</div>
+    <!-- Modal Lupa Password -->
+    <div id="forgotModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Lupa Password</h2>
+            <form id="forgotForm">
+                <div class="form-group">
+                    <label for="resetEmail">Email:</label>
+                    <input type="email" id="resetEmail" required>
+                </div>
+                <button type="submit" class="btn-primary">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Daftar -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Daftar Akun Baru</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Nama Lengkap:</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Daftar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

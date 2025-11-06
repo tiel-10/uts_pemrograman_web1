@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking - Toko Buku Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Toko Buku Online</h1>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="index.html">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Tracking Pengiriman</h2>
+        
+        <div class="tracking-search">
+            <div class="form-group">
+                <label for="trackingNumber">Nomor Delivery Order:</label>
+                <input type="text" id="trackingNumber" placeholder="Masukkan nomor DO">
+            </div>
+            <button id="searchTracking" class="btn-primary">Cari</button>
+        </div>
+
+        <div id="trackingResult" class="tracking-result" style="display: none;">
+            <div class="tracking-info">
+                <h3>Informasi Pengiriman</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Nama Pemesan:</label>
+                        <span id="trackingName">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Status Pengiriman:</label>
+                        <span id="trackingStatus" class="status-badge">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Ekspedisi:</label>
+                        <span id="trackingExpedition">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Tanggal Kirim:</label>
+                        <span id="trackingDate">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Jenis Paket:</label>
+                        <span id="trackingPackage">-</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Total Pembayaran:</label>
+                        <span id="trackingTotal">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h3>Status Pengiriman</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-labels">
+                    <span>Diterima</span>
+                    <span>Diproses</span>
+                    <span>Dikirim</span>
+                    <span>Selesai</span>
+                </div>
+            </div>
+
+            <div class="tracking-history">
+                <h3>Riwayat Pengiriman</h3>
+                <div id="trackingHistory" class="history-list">
+                    <!-- Riwayat akan diisi oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
